@@ -17,6 +17,10 @@ export interface ResolvedUsage extends UnresolvedUsage {
 }
 
 export async function CheckUsages(options: UsageOptions, callbacks: UsageEventCallbacks = {}) {
+  // 递归分析package.json文件中的
+  //  dependencies
+  // devDependencies
+  // optionalDependencies
   const packages = await loadPackages(options)
   const names: Record<string, Record<string, PackageMeta[]>> = {}
 

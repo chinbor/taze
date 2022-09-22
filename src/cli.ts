@@ -66,6 +66,7 @@ function commonOptions(args: Argv<{}>): Argv<CommonOptions> {
     })
 }
 
+// https://github.com/yargs/yargs/blob/HEAD/docs/api.md
 // eslint-disable-next-line no-unused-expressions
 yargs(hideBin(process.argv))
   .scriptName('taze')
@@ -82,6 +83,7 @@ yargs(hideBin(process.argv))
           describe: 'show more info',
         })
         .help()
+        // 是否存在 -r 命令（If key is a string, show the usage information and exit if key wasn't specified in process.argv.）
         .demandOption('recursive', c.yellow('Please add -r to analysis usages'))
     },
     async args => usage(await resolveConfig({ ...args, recursive: true })),

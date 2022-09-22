@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "dev": "cross-env DEBUG=taze:* esmo ./src/cli.ts",
+    "dev": "cross-env DEBUG=taze:* esno ./src/cli.ts",
     "start": "esno ./src/cli.ts",
     "build": "unbuild",
     "prepublishOnly": "nr build",
@@ -66,6 +66,7 @@
     "taze": "workspace:*",
     "typescript": "^4.8.3",
     "unbuild": "^0.8.11",
+    "vite": "^3.1.3",
     "vitest": "^0.23.4"
   },
   "eslintConfig": {

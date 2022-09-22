@@ -22,11 +22,13 @@ function normalizeConfig<T extends CommonOptions>(options: T) {
 export async function resolveConfig<T extends CommonOptions>(options: T): Promise<T> {
   options = normalizeConfig(options)
 
+  // https://www.npmjs.com/package/unconfig
   const loader = createConfigLoader<CommonOptions>({
     sources: [
       {
         files: [
           'taze.config',
+          // default extensions ['ts', 'mts', 'cts', 'js', 'mjs', 'cjs', 'json', ''],
         ],
       },
       {

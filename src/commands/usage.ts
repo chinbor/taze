@@ -20,6 +20,9 @@ export async function usage(options: UsageOptions) {
 
   let depBar: SingleBar | undefined
 
+  // 进度条展示
+  // onLoaded 启动并创建 进度条
+  // onDependencyResolved 解析完毕（下载完毕）
   const resolveUsages = await CheckUsages(options, {
     onLoaded(usages) {
       depBar = bars.create(usages.length, 0, { type: c.green('deps') })
